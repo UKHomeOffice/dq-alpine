@@ -49,8 +49,7 @@ steps:
     registry: quay.io
     repo: quay.io/ukhomeofficedigital/dq-alpine
     tags:
-    - ${DRONE_COMMIT_SHA}
-    - b${DRONE_BUILD_NUMBER}
+    - master
   environment:
     DOCKER_PASSWORD:
       from_secret: docker_password
