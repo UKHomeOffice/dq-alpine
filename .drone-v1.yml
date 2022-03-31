@@ -30,9 +30,9 @@ steps:
 
 - name: trivy_scan
   pull: if-not-exists
-  image: *trivy-image
+  image: quay.io/ukhomeofficedigital/trivyscanner:master
   commands:
-  - trivy --ignore-unfixed --exit-code 0 --no-progress quay.io/ukhomeofficedigital/dq-alpine:${DRONE_COMMIT_SHA}
+  - trivy --ignore-unfixed --exit-code 1 --no-progress quay.io/ukhomeofficedigital/dq-alpine:${DRONE_COMMIT_SHA}
   when:
     branch:
       exclude:
